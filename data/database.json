@@ -1,0 +1,59 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Retrovisor"
+    },
+    {
+      "id": 2,
+      "nome": "Calota"
+    },
+    {
+      "id": 3,
+      "username": "lucas",
+      "senha": "sdbsy6uiik"
+    },
+    {
+      "nome": "Volante",
+      "Tipo": "Controle",
+      "id": 4
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "username": "marcosrique",
+      "senha": "123456"
+    },
+    {
+      "username": "marcosvianna",
+      "senha": "sdbs7dg0",
+      "id": 2
+    },
+    {
+      "username": "kauam",
+      "senha": "sdbsy6uiik",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "username": "lucas",
+      "senha": "sdbsy6uiik"
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "descricao": "basico"
+    },
+    {
+      "nome": "Volante",
+      "Tipo": "Controle",
+      "id": 2
+    },
+    {
+      "descricao": "Avançado",
+      "id": 3
+    }
+  ]
+}
