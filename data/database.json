@@ -17,6 +17,11 @@
       "nome": "Volante",
       "Tipo": "Controle",
       "id": 4
+    },
+    {
+      "id": 5,
+      "nome": "Pastilha de freio",
+      "tipo": "Essencial"
     }
   ],
   "clientes": [
