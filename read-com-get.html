@@ -7,7 +7,8 @@
 </head>
 <body>
     <h1>Read com GET</h1>
-    <a href="./index.html">« Home</a>
+    <a href="./index.html">← Home</a>
+
     <button type="button" id="carregar">Carregar Produtos</button>
 
     <div id="produtos">
@@ -15,9 +16,9 @@
     </div>
 
     <script>
-        document.querySelector("#carregar").addEventListener('click', () => {
+        document.querySelector("#carregar").addEventListener("click", () => {
 
-            fetch('https://supreme-goggles-7gw79pqpvgrf6p-3000.app.github.dev/produtos', {
+            fetch("http://[::1]:3000/produtos", {
                 method: "GET",
                 headers: {
                     "Content-type": "application/json"
@@ -25,7 +26,7 @@
             })
             .then(resposta => resposta.json())
             .then(resposta => {
-
+                
                 const divProdutos = document.querySelector("#produtos");
                 const tituloProdutos = document.createElement("h2");
 
@@ -34,12 +35,14 @@
                 divProdutos.append(tituloProdutos);
 
                 resposta.forEach(produto => {
-                    document.querySelector("#produtos").innerHTML += `<ul><li>ID: ${produto.id}</li><li>Nome: ${produto.nome}</li></ul>`;    
-                });
-                
+                    document.querySelector("#produtos").innerHTML += `<ul><li>ID: ${produto.id}</li><li>Nome: ${produto.nome}</li></ul>`;
+                    
+                })
+
             })
 
         })
     </script>
+    
 </body>
 </html>
