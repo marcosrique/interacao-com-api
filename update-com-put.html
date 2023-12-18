@@ -6,7 +6,7 @@
     <title>Interação com APIs | Create com Post</title>
 </head>
 <body>
-    <h1>Create com Post</h1>
+    <h1>Update com PUT</h1>
     <a href="./index.html">← Home</a>
 
     <button type="button" id="carregar">Carregar Produtos</button>
@@ -15,12 +15,12 @@
 
         <div class="controle-form">
             <label for="idProduto">ID do produto:</label>
-            <input type="number" id="idProduto" name="idProduto" min="1" disabled>
+            <input type="number" id="idProduto" name="idProduto" min="1" required>
         </div>
 
         <div class="controle-form">
             <label for="nomeProduto">Nome:</label>
-            <input type="text" id="nomeProduto" name="nomeProduto">
+            <input type="text" id="nomeProduto" name="nomeProduto" required>
         </div>
         
         <div class="controle-form">
@@ -28,19 +28,22 @@
             <select name="tipoProduto" id="tipoProduto">
                 <option value="Carroceria">Carroceria</option>
                 <option value="Controle">Controle</option>
+                <option value="Seguranca">Segurança</option>
+                <option value="PowerTrain">Power Train</option>
                 <option value="Opcional" selected>Opcional</option>
             </select>
         </div>
-        <button type="button" id="cadastrar">Cadastrar</button>
+        <button type="button" id="atualizar">Atualizar</button>
     </form>
 
     <div id="produtos">
-        <h2>Produtos</h2>
+        
     </div>
 
     <script>
+        buscarProdutos();
 
-        document.querySelector("#cadastrar").addEventListener("click", () => {
+        document.querySelector("#atualizar").addEventListener("click", () => {
             
             const dadosProduto = {
                 "id": null,
@@ -49,23 +52,24 @@
 
             }
             
-            
-            fetch("http://[::1]:3000/produtos", {
-                method: "POST",
+            const  idProduto = document.querySelector('#idProduto').value;
+
+            fetch(`http://[::1]:3000/produtos/${idProduto}`, {
+                method: 'PUT',
                 headers: {
                     "Content-type": "application/json"
                 },
                 body: JSON.stringify(dadosProduto)
             }).then(resposta => {
                 if(resposta.ok) {
-                    window.alert("Produto cadastrado!");
+                    window.alert("Produto Atualizado!");
                 } else {
                     window.alert("Erro!");
                 }
             })
         })
 
-        document.querySelector("#carregar").addEventListener("click", () => {
+        function buscarProdutos() {
 
             fetch("http://[::1]:3000/produtos", {
                 method: "GET",
@@ -90,7 +94,7 @@
 
             })
 
-        })
+        }
     </script>
     
 </body>
