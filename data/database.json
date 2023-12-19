@@ -2,12 +2,13 @@
   "produtos": [
     {
       "id": 1,
-      "nome": "Retrovisor"
+      "nome": "Retrovisor Direita",
+      "tipo": "Opcional"
     },
     {
+      "id": 4,
       "nome": "Volante",
-      "Tipo": "Controle",
-      "id": 4
+      "tipo": "Seguranca"
     },
     {
       "id": 5,
